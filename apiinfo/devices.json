@@ -1,0 +1,23 @@
+{
+	"models": [
+		{
+			"id": "HT-NT5",
+			"patternMatch": "HT-NT5",
+			"name": "HT-NT5",
+			"type": "soundbar",
+			"description": "Sony HT-NT5 Soundbar"
+		},
+		{
+			"id": "XBR-900E",
+			"patternMatch": "XBR-[\\d]{2,3}X900E",
+			"name": "Sony Bravia X900E",
+			"type": "tv",
+			"description": "Sony - LED - X900E Series - 2160p - Smart - 4K UHD TV with HDR",
+			"specificModels": [
+				"XBR-49X900E",
+				"XBR-55X900E",
+				"XBR-65X900E"
+			]
+		}
+	]
+}
