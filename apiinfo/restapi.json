@@ -1,43 +1,90 @@
 [
 	{
-		"serviceName": "system",
-		"version": "1.0",
-		"transport": "websocket:jsonizer",
 		"methods": [
 			{
-				"methodName": "actSWUpdate", 
-				"parms": [],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "connectBluetoothDevice",
+				"methodName": "actRegister",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [
-					"{\"bdAddr\":\"string\"}"
+					"{\"clientid\":\"string\",\"nickname\":\"string\",\"level\":\"string\"}",
+					"{\"function\":\"string\",\"value\":\"string\"}*"
 				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getDeviceMiscSettings",
-				"parms": [
-					"{\"target\":\"string\"}"
-				],
-				"retVals": [
-					"{\"target\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"Boolean\", \"candidate\":\"GeneralSettingsCandidate[]\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getInterfaceInformation",
-				"parms": [],
-				"retVals": [
-					"{\"productCategory\":\"string\", \"productName\":\"string\", \"modelName\":\"string\", \"serverName\":\"string\", \"interfaceVersion\":\"string\"}"
-				],
-				"version": "1.0"
+				"retVals": []
 			},
 			{
 				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			}
+		],
+		"notifications": [],
+		"serviceName": "accessControl",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "getApplicationList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"title\":\"string\",\"uri\":\"string\",\"icon\":\"string\",\"data\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getApplicationStatusList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"name\":\"string\",\"status\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.1",
+				"variation": 0,
 				"parms": [
 					"string"
 				],
@@ -46,604 +93,2108 @@
 					"string*",
 					"string*",
 					"string"
-				],
-				"version": "1.0"
+				]
 			},
 			{
-				"methodName": "getPowerSettings",
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getTextForm",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string"
+				]
+			},
+			{
+				"methodName": "getTextForm",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"encKey\":\"string\"}"
+				],
+				"retVals": [
+					"{\"text\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getTextForm",
+				"version": "1.1",
+				"variation": 1,
+				"parms": [
+					"{\"encKey\":\"string\"}"
+				],
+				"retVals": [
+					"string"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "getWebAppStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"active\":\"bool\",\"url\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "setActiveApp",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"data\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setCsxUserAccount",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"userID\":\"string\",\"accessToken\":\"string\",\"userName\":\"string\",\"encKey\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setTextForm",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"int"
+				]
+			},
+			{
+				"methodName": "setTextForm",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"encKey\":\"string\",\"text\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "terminateApps",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			}
+		],
+		"notifications": [],
+		"serviceName": "appControl",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "getCustomEqualizerSettings",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [
 					"{\"target\":\"string\"}"
 				],
 				"retVals": [
-					"{\"target\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"Boolean\", \"candidate\":\"GeneralSettingsCandidate[]\"}*"
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"Boolean\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
 				],
-				"version": "1.0"
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getSoundSettings",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"Boolean\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getSoundSettings",
+				"version": "1.1",
+				"variation": 1,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"bool\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getSpeakerSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"Boolean\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getSpeakerSettings",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"bool\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "getVolumeInformation",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"target\":\"string\",\"volume\":\"int\",\"mute\":\"bool\",\"maxVolume\":\"int\",\"minVolume\":\"int\"}*"
+				]
+			},
+			{
+				"methodName": "getVolumeInformation",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\"}"
+				],
+				"retVals": [
+					"{\"output\":\"string\",\"volume\":\"int\",\"mute\":\"string\",\"maxVolume\":\"int\",\"minVolume\":\"int\",\"step\":\"int\"}*"
+				]
+			},
+			{
+				"methodName": "setAudioMute",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"status\":\"bool\"}"
+				],
+				"retVals": [
+					"int"
+				]
+			},
+			{
+				"methodName": "setAudioMute",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\",\"mute\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setAudioVolume",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\",\"volume\":\"string\"}"
+				],
+				"retVals": [
+					"int"
+				]
+			},
+			{
+				"methodName": "setAudioVolume",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\",\"volume\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setAudioVolume",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\",\"volume\":\"string\",\"ui\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setCustomEqualizerSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setSoundSettings",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setSpeakerSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "switchNotifications",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"enabled\":\"ApiIdentity[]\",\"disabled\":\"ApiIdentity[]\"}"
+				],
+				"retVals": [
+					"{\"enabled\":\"ApiIdentity[]\",\"disabled\":\"ApiIdentity[]\",\"unsupported\":\"ApiIdentity[]\"}"
+				]
+			}
+		],
+		"notifications": [
+			{
+				"methodName": "notifyVolumeInformation",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "notifyWirelessSurroundInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			}
+		],
+		"serviceName": "audio",
+		"version": "1.0",
+		"transport": "websocket:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "deleteContent",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "getAvailablePlaybackFunction",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\"}"
+				],
+				"retVals": [
+					"{\"functions\":\"FunctionInfo[]\",\"output\":\"string\",\"uri\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getBluetoothSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"Boolean\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getContentCount",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"source\":\"string\",\"type\":\"string\"}"
+				],
+				"retVals": [
+					"{\"count\":\"int\"}"
+				]
+			},
+			{
+				"methodName": "getContentCount",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"source\":\"string\",\"type\":\"string\",\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"count\":\"int\"}"
+				]
+			},
+			{
+				"methodName": "getContentCount",
+				"version": "1.3",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"type\":\"string*\",\"target\":\"string\",\"view\":\"string\",\"path\":\"string\"}"
+				],
+				"retVals": [
+					"{\"count\":\"int\",\"capability\":\"int\"}"
+				]
+			},
+			{
+				"methodName": "getContentList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"source\":\"string\",\"stIdx\":\"int\",\"cnt\":\"int\",\"type\":\"string\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"index\":\"int\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programMediaType\":\"string\",\"directRemoteNum\":\"int\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"channelName\":\"string\",\"fileSizeByte\":\"int\",\"isProtected\":\"bool\",\"isAlreadyPlayed\":\"bool\"}*"
+				]
+			},
+			{
+				"methodName": "getContentList",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [
+					"{\"source\":\"string\",\"stIdx\":\"int\",\"cnt\":\"int\",\"type\":\"string\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"index\":\"int\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programMediaType\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"channelName\":\"string\",\"isProtected\":\"bool\",\"directRemoteNum\":\"int\",\"isAlreadyPlayed\":\"bool\"}*"
+				]
+			},
+			{
+				"methodName": "getContentList",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [
+					"{\"source\":\"string\",\"stIdx\":\"int\",\"cnt\":\"int\",\"type\":\"string\",\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"index\":\"int\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programMediaType\":\"string\",\"directRemoteNum\":\"int\",\"epgVisibility\":\"string\",\"channelSurfingVisibility\":\"string\",\"visibility\":\"string\",\"startDateTime\":\"string\",\"channelName\":\"string\",\"fileSizeByte\":\"int\",\"isProtected\":\"bool\",\"isAlreadyPlayed\":\"bool\",\"productID\":\"string\",\"contentType\":\"string\",\"storageUri\":\"string\",\"videoCodec\":\"string\",\"chapterCount\":\"int\",\"durationSec\":\"double\",\"audioCodec\":\"string*\",\"audioFrequency\":\"string*\",\"audioChannel\":\"string*\",\"subtitleLanguage\":\"string*\",\"subtitleTitle\":\"string*\",\"parentalRating\":\"string*\",\"parentalSystem\":\"string*\",\"parentalCountry\":\"string*\",\"sizeMB\":\"int\",\"createdTime\":\"string\",\"userContentFlag\":\"bool\"}*"
+				]
+			},
+			{
+				"methodName": "getContentList",
+				"version": "1.2",
+				"variation": 1,
+				"parms": [
+					"{\"source\":\"string\",\"stIdx\":\"int\",\"cnt\":\"int\",\"type\":\"string\",\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"index\":\"int\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programMediaType\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"channelName\":\"string\",\"isProtected\":\"bool\",\"directRemoteNum\":\"int\",\"isAlreadyPlayed\":\"bool\"}*"
+				]
+			},
+			{
+				"methodName": "getContentList",
+				"version": "1.4",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"stIdx\":\"int\",\"cnt\":\"int\",\"type\":\"string*\",\"target\":\"string\",\"view\":\"string\",\"sort\":\"string\",\"path\":\"string\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"index\":\"int\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programMediaType\":\"string\",\"directRemoteNum\":\"int\",\"epgVisibility\":\"string\",\"channelSurfingVisibility\":\"string\",\"visibility\":\"string\",\"startDateTime\":\"string\",\"channelName\":\"string\",\"fileSizeByte\":\"int\",\"isProtected\":\"string\",\"isAlreadyPlayed\":\"string\",\"productID\":\"string\",\"contentType\":\"string\",\"storageUri\":\"string\",\"chapterCount\":\"int\",\"durationMsec\":\"int\",\"audioInfo\":\"AudioInfo[]\",\"subtitleInfo\":\"SubtitleInfo[]\",\"parentalInfo\":\"ParentalInfo[]\",\"sizeMB\":\"int\",\"createdTime\":\"string\",\"userContentFlag\":\"bool\",\"content\":\"ContentInfo\",\"folderNo\":\"string\",\"fileNo\":\"string\",\"artist\":\"string\",\"genre\":\"string*\",\"albumName\":\"string\",\"contentKind\":\"string\",\"isPlayable\":\"string\",\"isBrowsable\":\"string\",\"remotePlayType\":\"string*\",\"playlistName\":\"string\",\"podcastName\":\"string\",\"broadcastFreq\":\"int\",\"broadcastFreqBand\":\"string\",\"parentUri\":\"string\",\"parentIndex\":\"int\",\"videoInfo\":\"VideoInfo\",\"is3D\":\"string\",\"path\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getContentList",
+				"version": "1.5",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"stIdx\":\"int\",\"cnt\":\"int\",\"type\":\"string*\",\"target\":\"string\",\"view\":\"string\",\"sort\":\"SortInfo\",\"search\":\"Search\",\"filter\":\"string*\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"source\":\"string\",\"sourceLabel\":\"string\",\"title\":\"string\",\"index\":\"int\",\"output\":\"string\",\"stateInfo\":\"StateInfo\",\"globalPlaybackCount\":\"int\",\"dubbingInfo\":\"DubbingInfo\",\"position\":\"Position\",\"duration\":\"Duration\",\"playSpeed\":\"Speed\",\"repeatType\":\"string\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programTitle\":\"string\",\"programMediaType\":\"string\",\"programServiceType\":\"string\",\"directRemoteNum\":\"int\",\"visibility\":\"Visibility\",\"startDateTime\":\"string\",\"mediaType\":\"string\",\"bivlInfo\":\"BivlInfo\",\"chapterIndex\":\"int\",\"chapterCount\":\"int\",\"channelName\":\"string\",\"fileSizeByte\":\"int\",\"isProtected\":\"string\",\"isAutoDelete\":\"string\",\"isAlreadyPlayed\":\"string\",\"isNew\":\"string\",\"productID\":\"string\",\"contentType\":\"string\",\"storageUri\":\"string\",\"audioInfo\":\"AudioInfo[]\",\"subtitleInfo\":\"SubtitleInfo[]\",\"parentalInfo\":\"ParentalInfo[]\",\"dabInfo\":\"DabInfo\",\"sizeMB\":\"int\",\"createdTime\":\"string\",\"userContentFlag\":\"bool\",\"content\":\"ContentInfo\",\"folderNo\":\"string\",\"fileNo\":\"string\",\"totalCount\":\"int\",\"artist\":\"string\",\"genre\":\"string*\",\"broadcastGenreInfo\":\"BroadcastGenreInfo[]\",\"albumName\":\"string\",\"contentKind\":\"string\",\"isPlayable\":\"string\",\"isBrowsable\":\"string\",\"remotePlayType\":\"string*\",\"playlistName\":\"string\",\"podcastName\":\"string\",\"broadcastFreq\":\"BroadcastFreq\",\"service\":\"string\",\"parentUri\":\"string\",\"parentIndex\":\"int\",\"videoInfo\":\"VideoInfo[]\",\"groupInfo\":\"GroupInfo[]\",\"isPlaylist\":\"string\",\"playlistInfo\":\"PlaylistInfo[]\",\"recordingInfo\":\"RecordingInfo\",\"is3D\":\"string\",\"is4K\":\"string\",\"applicationName\":\"string\",\"isSoundPhoto\":\"string\",\"description\":\"Description\",\"hasResume\":\"string\",\"eventId\":\"string\",\"dataInfo\":\"DataBroadcastInfo\",\"syncContentPriority\":\"string\",\"clipCount\":\"int\"}*"
+				]
+			},
+			{
+				"methodName": "getCurrentExternalInputsStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"connection\":\"bool\",\"label\":\"string\",\"icon\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getCurrentExternalInputsStatus",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [],
+				"retVals": [
+					"{\"title\":\"string\",\"uri\":\"string\",\"connection\":\"bool\",\"label\":\"string\",\"icon\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getCurrentExternalInputsStatus",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"connection\":\"bool\",\"label\":\"string\",\"icon\":\"string\",\"status\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getCurrentExternalTerminalsStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"connection\":\"string\",\"active\":\"string\",\"label\":\"string\",\"outputs\":\"string*\",\"meta\":\"string\",\"iconUrl\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getFavoriteList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"source\":\"string\",\"label\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string*",
+					"string*",
+					"string"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string*",
+					"string*",
+					"string"
+				]
+			},
+			{
+				"methodName": "getParentalRatingSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"ratingTypeAge\":\"int\",\"ratingTypeSony\":\"string\",\"ratingCountry\":\"string\",\"ratingCustomTypeTV\":\"string*\",\"ratingCustomTypeMpaa\":\"string\",\"ratingCustomTypeCaEnglish\":\"string\",\"ratingCustomTypeCaFrench\":\"string\",\"unratedLock\":\"bool\"}"
+				]
+			},
+			{
+				"methodName": "getParentalRatingSettings",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [],
+				"retVals": [
+					"{\"ratingCountry\":\"string\",\"ratingTypeAge\":\"integer\",\"ratingTypeSony\":\"string\",\"ratingCustomTypeTV\":[\"string*\"],\"ratingCustomTypeMpaa\":\"string\",\"ratingCustomTypeCaEnglish\":\"string\",\"ratingCustomTypeCaFrench\":\"string\",\"unratedLock\":\"bool\"}"
+				]
+			},
+			{
+				"methodName": "getPlaybackModeSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\",\"uri\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"uri\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"bool\",\"candidate\":\"PlaybackModeSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getPlayingContentInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"uri\":\"string\",\"source\":\"string\",\"title\":\"string\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programTitle\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"mediaType\":\"string\",\"playSpeed\":\"string\",\"bivl_serviceId\":\"string\",\"bivl_assetId\":\"string\",\"bivl_provider\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getPlayingContentInfo",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [],
+				"retVals": [
+					"{\"uri\":\"string\",\"source\":\"string\",\"title\":\"string\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programTitle\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"playSpeed\":\"string\",\"bivl_serviceId\":\"string\",\"bivl_assetId\":\"string\",\"bivl_provider\":\"string\",\"mediaType\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getPlayingContentInfo",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"source\":\"string\",\"sourceLabel\":\"string\",\"title\":\"string\",\"output\":\"string\",\"stateInfo\":\"StateInfo\",\"positionSec\":\"double\",\"positionMsec\":\"int\",\"durationSec\":\"double\",\"durationMsec\":\"int\",\"playSpeedStep\":\"int\",\"repeatType\":\"string\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programTitle\":\"string\",\"startDateTime\":\"string\",\"mediaType\":\"string\",\"playSpeed\":\"string\",\"bivl_serviceId\":\"string\",\"bivl_assetId\":\"string\",\"bivl_provider\":\"string\",\"chapterIndex\":\"int\",\"chapterCount\":\"int\",\"subtitleIndex\":\"int\",\"artist\":\"string\",\"genre\":\"string*\",\"albumName\":\"string\",\"contentKind\":\"string\",\"fileNo\":\"string\",\"channelName\":\"string\",\"playlistName\":\"string\",\"podcastName\":\"string\",\"totalCount\":\"int\",\"broadcastFreq\":\"int\",\"broadcastFreqBand\":\"string\",\"dabInfo\":\"DabInfo\",\"audioInfo\":\"AudioInfo[]\",\"parentUri\":\"string\",\"service\":\"string\",\"index\":\"int\",\"videoInfo\":\"VideoInfo\",\"applicationName\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getPlayingContentInfo",
+				"version": "1.2",
+				"variation": 1,
+				"parms": [
+					"{\"output\":\"string\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"source\":\"string\",\"sourceLabel\":\"string\",\"title\":\"string\",\"output\":\"string\",\"stateInfo\":\"StateInfo\",\"positionSec\":\"double\",\"positionMsec\":\"int\",\"durationSec\":\"double\",\"durationMsec\":\"int\",\"playSpeedStep\":\"int\",\"repeatType\":\"string\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programTitle\":\"string\",\"startDateTime\":\"string\",\"mediaType\":\"string\",\"playSpeed\":\"string\",\"bivl_serviceId\":\"string\",\"bivl_assetId\":\"string\",\"bivl_provider\":\"string\",\"chapterIndex\":\"int\",\"chapterCount\":\"int\",\"subtitleIndex\":\"int\",\"artist\":\"string\",\"genre\":\"string*\",\"albumName\":\"string\",\"contentKind\":\"string\",\"fileNo\":\"string\",\"channelName\":\"string\",\"playlistName\":\"string\",\"podcastName\":\"string\",\"totalCount\":\"int\",\"broadcastFreq\":\"int\",\"broadcastFreqBand\":\"string\",\"dabInfo\":\"DabInfo\",\"audioInfo\":\"AudioInfo[]\",\"parentUri\":\"string\",\"service\":\"string\",\"index\":\"int\",\"parentIndex\":\"int\",\"videoInfo\":\"VideoInfo\",\"is3D\":\"string\",\"path\":\"string\",\"applicationName\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getPlayingContentInfo2",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"uri\":\"string\",\"source\":\"string\",\"title\":\"string\",\"dispNum\":\"string\",\"originalDispNum\":\"string\",\"tripletStr\":\"string\",\"programNum\":\"int\",\"programTitle\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"playSpeed\":\"string\",\"bivl_serviceId\":\"string\",\"bivl_assetId\":\"string\",\"bivl_provider\":\"string\",\"mediaType\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getSchemeList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"scheme\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getSourceList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"scheme\":\"string\"}"
+				],
+				"retVals": [
+					"{\"source\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getSourceList",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"scheme\":\"string\"}"
+				],
+				"retVals": [
+					"{\"source\":\"string\",\"title\":\"string\",\"isPlayable\":\"bool\",\"isBrowsable\":\"bool\",\"playAction\":\"string\",\"outputs\":\"string*\",\"meta\":\"string\",\"iconUrl\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getSourceList",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [
+					"{\"scheme\":\"string\"}"
+				],
+				"retVals": [
+					"{\"source\":\"string\",\"title\":\"string\",\"isPlayable\":\"bool\",\"isBrowsable\":\"bool\",\"playAction\":\"string\",\"outputs\":\"string*\",\"meta\":\"string\",\"iconUrl\":\"string\",\"protocols\":\"string*\",\"upnpOperationInfo\":\"UpnpOperationInfo\"}*"
+				]
+			},
+			{
+				"methodName": "getSourceList2",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"scheme\":\"string\"}"
+				],
+				"retVals": [
+					"{\"source\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getSupportedPlaybackFunction",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\"}"
+				],
+				"retVals": [
+					"{\"functions\":\"SupportedFunctionInfo[]\",\"uri\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "pausePlayingContent",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "presetBroadcastStation",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"frequency\":\"int\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "scanPlayingContent",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\",\"direction\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "seekBroadcastStation",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"direction\":\"string\",\"tuning\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setActiveTerminal",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"active\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setBluetoothSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setDeleteProtection",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"isProtected\":\"bool\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setFavoriteContentList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"favSource\":\"string\",\"contents\":\"string*\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setFavoriteContentList",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [
+					"{\"favSource\":\"string\",\"contents\":\"string-array\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPlayContent",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPlayContent",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"positionSec\":\"double\",\"positionMsec\":\"int\",\"resume\":\"bool\",\"requester\":\"string\",\"repeatType\":\"string\",\"keepLastFrame\":\"bool\",\"output\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPlayNextContent",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPlayPreviousContent",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPlayTvContent",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"channel\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPlayTvContent",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"channel\":\"PlayTvChannel\",\"source\":\"string\",\"sourceType\":\"string\",\"broadcastFreqName\":\"string\",\"ignoreVisibilitySettings\":\"bool\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPlaybackModeSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setTvContentVisibility",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"epgVisibility\":\"string\",\"channelSurfingVisibility\":\"string\",\"visibility\":\"string\"}*"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "startContentBrowsing",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\"}"
+				],
+				"retVals": [
+					"{\"status\":\"string\",\"errorMessage\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "stopPlayingContent",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"output\":\"string\",\"keepLastFrame\":\"bool\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "switchNotifications",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"enabled\":\"ApiIdentity[]\",\"disabled\":\"ApiIdentity[]\"}"
+				],
+				"retVals": [
+					"{\"enabled\":\"ApiIdentity[]\",\"disabled\":\"ApiIdentity[]\",\"unsupported\":\"ApiIdentity[]\"}"
+				]
+			}
+		],
+		"notifications": [
+			{
+				"methodName": "notifyAvailablePlaybackFunction",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "notifyExternalTerminalStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "notifyPlayingContentInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			}
+		],
+		"serviceName": "avContent",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "actBrowserControl",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"control\":\"string\"}"
+				],
+				"retVals": [
+					"int"
+				]
+			},
+			{
+				"methodName": "getBrowserBookmarkList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"title\":\"string\",\"url\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getTextUrl",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"url\":\"string\",\"title\":\"string\",\"type\":\"string\",\"favicon\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "setTextUrl",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"url\":\"string\",\"title\":\"string\",\"type\":\"string\",\"favicon\":\"string\"}"
+				],
+				"retVals": [
+					"int"
+				]
+			}
+		],
+		"notifications": [],
+		"serviceName": "browser",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "setCecControlMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"enabled\":\"bool\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setMhlAutoInputChangeMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"enabled\":\"bool\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setMhlPowerFeedMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"enabled\":\"bool\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPowerSyncMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"sinkPowerOffSync\":\"bool\",\"sourcePowerOnSync\":\"bool\"}"
+				],
+				"retVals": []
+			}
+		],
+		"notifications": [],
+		"serviceName": "cec",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "closeContentShare",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getContentList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getContentShareServerInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getUserList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "requestToNotifyEvent",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "rotatePhoto",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "setBgmControlMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "setQuickInvitationMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "setUserNickName",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "togglePlayStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "voteContent",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			}
+		],
+		"notifications": [],
+		"serviceName": "contentshare",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getPublicKey",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"publicKey\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			}
+		],
+		"notifications": [],
+		"serviceName": "encryption",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getSupportedApiInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"services\":\"string*\"}"
+				],
+				"retVals": [
+					"{\"service\":\"string\",\"protocols\":\"string*\",\"apis\":\"ApiInfo[]\"}*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			}
+		],
+		"notifications": [],
+		"serviceName": "guide",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string*",
+					"string*",
+					"string"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "requestToNotifySystemInformation",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"region\":\"string\",\"language\":\"string\"}"
+				],
+				"retVals": [
+					"{\"region\":\"string\",\"language\":\"string\"}"
+				]
+			}
+		],
+		"notifications": [],
+		"serviceName": "notification",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "addSchedule",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"type\":\"string\",\"uri\":\"string\",\"title\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"repeatType\":\"string\",\"quality\":\"string\"}"
+				],
+				"retVals": [
+					"{\"annotation\":\"int\"}"
+				]
+			},
+			{
+				"methodName": "addSchedule",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"type\":\"string\",\"uri\":\"string\",\"title\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"repeatType\":\"string\",\"quality\":\"string\",\"eventId\":\"string\"}"
+				],
+				"retVals": [
+					"{\"annotation\":\"int\"}"
+				]
+			},
+			{
+				"methodName": "addSchedule",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [
+					"{\"type\":\"string\",\"uri\":\"string\",\"title\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"repeatType\":\"string\",\"quality\":\"string\",\"eventId\":\"string\",\"id\":\"string\",\"avoidDoubleRecording\":\"string\",\"mode\":\"string\",\"priority\":\"string\",\"storageUri\":\"string\",\"override\":\"string\",\"autoTransfer\":\"string\",\"trackedTitle\":\"string\",\"videoIndex\":\"int\",\"audioIndex\":\"int\",\"subtitleIndex\":\"int\",\"groupId\":\"string\",\"recordItemWithParentalLock\":\"string\",\"ignoreError\":\"string\"}"
+				],
+				"retVals": [
+					"{\"annotation\":\"int\",\"conflict\":\"ConflictSchedule[]\"}"
+				]
+			},
+			{
+				"methodName": "deleteSchedule",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"id\":\"string\",\"type\":\"string\",\"uri\":\"string\",\"title\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "deleteSchedule",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"id\":\"string\",\"contentUri\":\"string\",\"type\":\"string\",\"uri\":\"string\",\"title\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"delMode\":\"string\"}*"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "getConflictScheduleList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"title\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"repeatType\":\"string\"}"
+				],
+				"retVals": [
+					"{\"id\":\"string\",\"title\":\"string\",\"type\":\"string\",\"uri\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"repeatType\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getHistoryList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"stIdx\":\"int\",\"cnt\":\"int\"}"
+				],
+				"retVals": [
+					"{\"id\":\"string\",\"title\":\"string\",\"channelName\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"reasonId\":\"int\",\"reasonMsg\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getRecordingStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"status\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getScheduleList",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"stIdx\":\"int\",\"cnt\":\"int\"}"
+				],
+				"retVals": [
+					"{\"id\":\"string\",\"type\":\"string\",\"uri\":\"string\",\"title\":\"string\",\"channelName\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"repeatType\":\"string\",\"overlapStatus\":\"string\",\"recordingStatus\":\"string\",\"quality\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getScheduleList",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"stIdx\":\"int\",\"cnt\":\"int\"}"
+				],
+				"retVals": [
+					"{\"id\":\"string\",\"type\":\"string\",\"uri\":\"string\",\"title\":\"string\",\"channelName\":\"string\",\"startDateTime\":\"string\",\"durationSec\":\"int\",\"repeatType\":\"string\",\"overlapStatus\":\"string\",\"recordingStatus\":\"string\",\"quality\":\"string\",\"eventId\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "getSupportedRepeatType",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			}
+		],
+		"notifications": [],
+		"serviceName": "recording",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
+	},
+	{
+		"methods": [
+			{
+				"methodName": "actSWUpdate",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "connectBluetoothDevice",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"bdAddr\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "getColorKeysLayout",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"colorKeysLayout\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getCurrentTime",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string"
+				]
+			},
+			{
+				"methodName": "getCurrentTime",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"dateTime\":\"string\",\"timeZoneOffsetMinute\":\"int\",\"dstOffsetMinute\":\"int\"}"
+				]
+			},
+			{
+				"methodName": "getDateTimeFormat",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"dateFormat\":\"string\",\"timeFormat\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getDeviceMiscSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"Boolean\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getDeviceMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"value\":\"string\"}"
+				],
+				"retVals": [
+					"{\"isOn\":\"bool\"}"
+				]
+			},
+			{
+				"methodName": "getInterfaceInformation",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"productCategory\":\"string\",\"productName\":\"string\",\"modelName\":\"string\",\"serverName\":\"string\",\"interfaceVersion\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getLEDIndicatorStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"mode\":\"string\",\"status\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string",
+					"string*",
+					"string*"
+				]
+			},
+			{
+				"methodName": "getMethodTypes",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"string"
+				],
+				"retVals": [
+					"string",
+					"string*",
+					"string*",
+					"string"
+				]
+			},
+			{
+				"methodName": "getNetworkSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"netif\":\"string\"}"
+				],
+				"retVals": [
+					"{\"netif\":\"string\",\"hwAddr\":\"string\",\"ipAddrV4\":\"string\",\"ipAddrV6\":\"string\",\"netmask\":\"string\",\"gateway\":\"string\",\"dns\":\"string*\"}*"
+				]
+			},
+			{
+				"methodName": "getNetworkSettings",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [
+					"{\"netif\":\"string\"}"
+				],
+				"retVals": [
+					"{\"netif\":\"string\",\"hwAddr\":\"string\",\"ipAddrV4\":\"string\",\"ipAddrV6\":\"string\",\"netmask\":\"string\",\"gateway\":\"string\",\"dns\":[\"string*\"]}*"
+				]
+			},
+			{
+				"methodName": "getPostalCode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"postalCode\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getPowerSavingMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"mode\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getPowerSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"Boolean\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "getPowerStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"status\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getPowerStatus",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"status\":\"string\",\"standbyDetail\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getRemoteControllerInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"bundled\":\"bool\",\"type\":\"string\"}",
+					"{\"name\":\"string\",\"value\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getRemoteDeviceSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"bool\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
 			},
 			{
 				"methodName": "getSWUpdateInfo",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [
 					"{\"network\":\"string\"}"
 				],
 				"retVals": [
-					"{\"isUpdatable\":\"string\", \"swInfo\":\"SWInfo[]\"}"
-				],
-				"version": "1.0"
+					"{\"isUpdatable\":\"string\",\"swInfo\":\"SWInfo[]\"}"
+				]
 			},
 			{
-				"methodName": "getSleepTimerSettings",
-				"parms": [
-					"{\"target\":\"string\"}"
-				],
-				"retVals": [
-					"{\"target\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"Boolean\", \"candidate\":\"GeneralSettingsCandidate[]\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getVersions",
+				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [],
-				"retVals": [
-					"string*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getWuTangInfo",
-				"parms": [
-					"{\"target\":\"string\"}"
-				],
-				"retVals": [
-					"{\"target\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"Boolean\", \"candidate\":\"GeneralSettingsCandidate[]\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setClientInfo",
-				"parms": [
-					"{\"target\":\"string\", \"value\":\"string\"}*"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setDeviceMiscSettings",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setPowerSettings",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setSleepTimerSettings",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setWuTangInfo",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "switchNotifications",
-				"parms": [
-					"{\"enabled\":\"ApiIdentity[]\", \"disabled\":\"ApiIdentity[]\"}"
-				],
-				"retVals": [
-					"{\"enabled\":\"ApiIdentity[]\", \"disabled\":\"ApiIdentity[]\", \"unsupported\":\"ApiIdentity[]\"}"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getPowerStatus",
-				"parms": [],
-				"retVals": [
-					"{\"status\":\"string\", \"standbyDetail\":\"string\"}"
-				],
-				"version": "1.1"
+				"retVals": []
 			},
 			{
 				"methodName": "getSettingsTree",
+				"version": "1.1",
+				"variation": 0,
 				"parms": [
 					"{\"usage\":\"string\"}"
 				],
 				"retVals": [
 					"{\"settings\":\"SettingsTreeList[]\"}"
+				]
+			},
+			{
+				"methodName": "getSleepTimerSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\"}"
 				],
-				"version": "1.1"
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"Boolean\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
 			},
 			{
 				"methodName": "getStorageList",
+				"version": "1.1",
+				"variation": 0,
 				"parms": [
 					"{\"uri\":\"string\"}"
 				],
 				"retVals": [
-					"{\"uri\":\"string\", \"deviceName\":\"string\", \"volumeLabel\":\"string\", \"permission\":\"string\", \"position\":\"string\", \"formattable\":\"string\", \"mounted\":\"string\", \"wholeCapacityMB\":\"int\", \"freeCapacityMB\":\"int\", \"systemAreaCapacityMB\":\"int\", \"formatting\":\"string\", \"isAvailable\":\"string\", \"lun\":\"int\", \"type\":\"string\", \"format\":\"string\", \"error\":\"string\"}*"
+					"{\"uri\":\"string\",\"deviceName\":\"string\",\"volumeLabel\":\"string\",\"permission\":\"string\",\"position\":\"string\",\"formattable\":\"string\",\"mounted\":\"string\",\"wholeCapacityMB\":\"int\",\"freeCapacityMB\":\"int\",\"systemAreaCapacityMB\":\"int\",\"formatting\":\"string\",\"isAvailable\":\"string\",\"lun\":\"int\",\"type\":\"string\",\"format\":\"string\",\"error\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getStorageList",
+				"version": "1.1",
+				"variation": 1,
+				"parms": [
+					"{\"uri\":\"string\"}"
 				],
-				"version": "1.1"
+				"retVals": [
+					"{\"uri\":\"string\",\"deviceName\":\"string\",\"volumeLabel\":\"string\",\"permission\":\"string\",\"position\":\"string\",\"formattable\":\"string\",\"mounted\":\"string\",\"wholeCapacityMB\":\"int\",\"freeCapacityMB\":\"int\",\"systemAreaCapacityMB\":\"int\",\"formatting\":\"string\",\"isAvailable\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getStorageList",
+				"version": "1.2",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\",\"isRegistered\":\"string\"}"
+				],
+				"retVals": [
+					"{\"uri\":\"string\",\"deviceName\":\"string\",\"volumeLabel\":\"string\",\"permission\":\"string\",\"position\":\"string\",\"formattable\":\"string\",\"mounted\":\"string\",\"wholeCapacityMB\":\"int\",\"freeCapacityMB\":\"int\",\"systemAreaCapacityMB\":\"int\",\"isAvailable\":\"string\",\"lun\":\"int\",\"type\":\"string\",\"protocol\":\"string\",\"format\":\"string\",\"error\":\"string\",\"isRegistered\":\"string\",\"registrationDate\":\"string\",\"isSqvSupported\":\"string\",\"hasNonStandardData\":\"string\",\"isProtected\":\"string\",\"isLocked\":\"string\",\"formatStatus\":\"string\",\"finalizeStatus\":\"string\",\"timeSecToFinalize\":\"int\",\"isSelfRecorded\":\"string\",\"isManagementInfoFull\":\"string\",\"timeSecToGetContents\":\"int\",\"hasUnsupportedContents\":\"string\",\"usbDeviceType\":\"string\",\"fileSystem\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getSystemInformation",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"product\":\"string\",\"region\":\"string\",\"language\":\"string\",\"model\":\"string\",\"serial\":\"string\",\"macAddr\":\"string\",\"name\":\"string\",\"generation\":\"string\",\"area\":\"string\",\"cid\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getSystemInformation",
+				"version": "1.3",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"product\":\"string\",\"region\":\"string\",\"language\":\"string\",\"model\":\"string\",\"serial\":\"string\",\"macAddr\":\"string\",\"name\":\"string\",\"generation\":\"string\",\"area\":\"string\",\"cid\":\"string\",\"helpUrl\":\"string\",\"deviceID\":\"string\",\"version\":\"string\",\"duid\":\"string\",\"updatableVersion\":\"string\",\"wirelessMacAddr\":\"string\",\"esn\":\"string\",\"iconUrl\":\"string\",\"ssid\":\"string\",\"bdAddr\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getSystemInformation",
+				"version": "1.4",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"product\":\"string\",\"region\":\"string\",\"language\":\"string\",\"model\":\"string\",\"serial\":\"string\",\"macAddr\":\"string\",\"name\":\"string\",\"generation\":\"string\",\"area\":\"string\",\"cid\":\"string\",\"helpUrl\":\"string\",\"deviceID\":\"string\",\"version\":\"string\",\"duid\":\"string\",\"wirelessMacAddr\":\"string\",\"esn\":\"string\",\"iconUrl\":\"string\",\"ssid\":\"string\",\"bdAddr\":\"string\",\"initialPowerOnTime\":\"string\",\"lastPowerOnTime\":\"string\",\"bleID\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getSystemSupportedFunction",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"option\":\"string\",\"value\":\"string\"}*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "getWolMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"enabled\":\"bool\"}"
+				]
+			},
+			{
+				"methodName": "getWuTangInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\"}"
+				],
+				"retVals": [
+					"{\"target\":\"string\",\"currentValue\":\"string\",\"deviceUIInfo\":\"string\",\"title\":\"string\",\"titleTextID\":\"string\",\"type\":\"string\",\"isAvailable\":\"Boolean\",\"candidate\":\"GeneralSettingsCandidate[]\"}*"
+				]
+			},
+			{
+				"methodName": "mountStorage",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"uri\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "requestReboot",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
+			},
+			{
+				"methodName": "requestToNotifyDeviceStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"internetTVLinkage\":{\"playingInternetTV\":\"bool\",\"showingKeyControlableGui\":\"bool\"}}"
+				],
+				"retVals": [
+					"{\"internetTVLinkage\":{\"playingInternetTV\":\"bool\",\"showingKeyControlableGui\":\"bool\"}}"
+				]
+			},
+			{
+				"methodName": "setClientInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"target\":\"string\",\"value\":\"string\"}*"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setCurrentTime",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"dateTime\":\"string\",\"timeZoneOffsetMinute\":\"int\",\"dstOffsetMinute\":\"int\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setDeviceMiscSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setDeviceMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"value\":\"string\",\"isOn\":\"bool\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setLEDIndicatorStatus",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"mode\":\"string\",\"status\":\"bool\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setLEDIndicatorStatus",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"mode\":\"string\",\"status\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setLanguage",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"language\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPostalCode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"postalCode\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPowerSavingMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"mode\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPowerSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
+				],
+				"retVals": []
 			},
 			{
 				"methodName": "setPowerStatus",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [
-					"{\"status\":\"string\", \"standbyDetail\":\"string\"}"
+					"{\"status\":\"bool\"}"
 				],
-				"retVals": [],
-				"version": "1.1"
+				"retVals": []
 			},
 			{
-				"methodName": "getStorageList",
+				"methodName": "setPowerStatus",
+				"version": "1.1",
+				"variation": 0,
 				"parms": [
-					"{\"uri\":\"string\", \"isRegistered\":\"string\"}"
+					"{\"status\":\"string\",\"standbyDetail\":\"string\"}"
 				],
-				"retVals": [
-					"{\"uri\":\"string\", \"deviceName\":\"string\", \"volumeLabel\":\"string\", \"permission\":\"string\", \"position\":\"string\", \"formattable\":\"string\", \"mounted\":\"string\", \"wholeCapacityMB\":\"int\", \"freeCapacityMB\":\"int\", \"systemAreaCapacityMB\":\"int\", \"isAvailable\":\"string\", \"lun\":\"int\", \"type\":\"string\", \"protocol\":\"string\", \"format\":\"string\", \"error\":\"string\", \"isRegistered\":\"string\", \"registrationDate\":\"string\", \"isSqvSupported\":\"string\", \"hasNonStandardData\":\"string\", \"isProtected\":\"string\", \"isLocked\":\"string\", \"formatStatus\":\"string\", \"finalizeStatus\":\"string\", \"timeSecToFinalize\":\"int\", \"isSelfRecorded\":\"string\", \"isManagementInfoFull\":\"string\", \"timeSecToGetContents\":\"int\", \"hasUnsupportedContents\":\"string\", \"usbDeviceType\":\"string\", \"fileSystem\":\"string\"}*"
-				],
-				"version": "1.2"
+				"retVals": []
 			},
 			{
-				"methodName": "getSystemInformation",
-				"parms": [],
-				"retVals": [
-					"{\"product\":\"string\", \"region\":\"string\", \"language\":\"string\", \"model\":\"string\", \"serial\":\"string\", \"macAddr\":\"string\", \"name\":\"string\", \"generation\":\"string\", \"area\":\"string\", \"cid\":\"string\", \"helpUrl\":\"string\", \"deviceID\":\"string\", \"version\":\"string\", \"duid\":\"string\", \"updatableVersion\":\"string\", \"wirelessMacAddr\":\"string\", \"esn\":\"string\", \"iconUrl\":\"string\", \"ssid\":\"string\", \"bdAddr\":\"string\"}"
+				"methodName": "setSleepTimerSettings",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
 				],
-				"version": "1.3"
+				"retVals": []
 			},
 			{
-				"methodName": "getSystemInformation",
-				"parms": [],
-				"retVals": [
-					"{\"product\":\"string\", \"region\":\"string\", \"language\":\"string\", \"model\":\"string\", \"serial\":\"string\", \"macAddr\":\"string\", \"name\":\"string\", \"generation\":\"string\", \"area\":\"string\", \"cid\":\"string\", \"helpUrl\":\"string\", \"deviceID\":\"string\", \"version\":\"string\", \"duid\":\"string\", \"wirelessMacAddr\":\"string\", \"esn\":\"string\", \"iconUrl\":\"string\", \"ssid\":\"string\", \"bdAddr\":\"string\", \"initialPowerOnTime\":\"string\", \"lastPowerOnTime\":\"string\", \"bleID\":\"string\"}"
+				"methodName": "setWolMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"enabled\":\"bool\"}"
 				],
-				"version": "1.4"
+				"retVals": []
+			},
+			{
+				"methodName": "setWuTangInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"settings\":\"GeneralSettings[]\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "switchNotifications",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"enabled\":\"ApiIdentity[]\",\"disabled\":\"ApiIdentity[]\"}"
+				],
+				"retVals": [
+					"{\"enabled\":\"ApiIdentity[]\",\"disabled\":\"ApiIdentity[]\",\"unsupported\":\"ApiIdentity[]\"}"
+				]
 			}
 		],
 		"notifications": [
 			{
-				"methodName": "notifySWUpdateInfo",
+				"methodName": "notifyPowerStatus",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [],
-				"retVals": [],
-				"version": "1.0"
+				"retVals": []
+			},
+			{
+				"methodName": "notifySWUpdateInfo",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": []
 			},
 			{
 				"methodName": "notifySettingsUpdate",
+				"version": "1.1",
+				"variation": 0,
 				"parms": [],
-				"retVals": [],
-				"version": "1.1"
-			},
-			{
-				"methodName": "notifyPowerStatus",
-				"parms": [],
-				"retVals": [],
-				"version": "1.0"
+				"retVals": []
 			},
 			{
 				"methodName": "notifyStorageStatus",
+				"version": "1.1",
+				"variation": 0,
 				"parms": [],
-				"retVals": [],
-				"version": "1.1"
+				"retVals": []
 			},
 			{
 				"methodName": "notifyStorageStatus",
+				"version": "1.2",
+				"variation": 0,
 				"parms": [],
-				"retVals": [],
-				"version": "1.2"
-			}
-		]
-	},
-	{
-		"serviceName": "audio",
-		"version": "1.0",
-		"transport": "websocket:jsonizer",
-		"methods": [
-			{
-				"methodName": "getCustomEqualizerSettings",
-				"parms": [
-					"{\"target\":\"string\"}"
-				],
-				"retVals": [
-					"{\"target\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"Boolean\", \"candidate\":\"GeneralSettingsCandidate[]\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getMethodTypes",
-				"parms": [
-					"string"
-				],
-				"retVals": [
-					"string",
-					"string*",
-					"string*",
-					"string"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getSpeakerSettings",
-				"parms": [
-					"{\"target\":\"string\"}"
-				],
-				"retVals": [
-					"{\"target\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"Boolean\", \"candidate\":\"GeneralSettingsCandidate[]\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getVersions",
-				"parms": [],
-				"retVals": [
-					"string*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setCustomEqualizerSettings",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setSpeakerSettings",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "switchNotifications",
-				"parms": [
-					"{\"enabled\":\"ApiIdentity[]\", \"disabled\":\"ApiIdentity[]\"}"
-				],
-				"retVals": [
-					"{\"enabled\":\"ApiIdentity[]\", \"disabled\":\"ApiIdentity[]\", \"unsupported\":\"ApiIdentity[]\"}"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getSoundSettings",
-				"parms": [
-					"{\"target\":\"string\"}"
-				],
-				"retVals": [
-					"{\"target\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"Boolean\", \"candidate\":\"GeneralSettingsCandidate[]\"}*"
-				],
-				"version": "1.1"
-			},
-			{
-				"methodName": "getVolumeInformation",
-				"parms": [
-					"{\"output\":\"string\"}"
-				],
-				"retVals": [
-					"{\"output\":\"string\", \"volume\":\"int\", \"mute\":\"string\", \"maxVolume\":\"int\", \"minVolume\":\"int\", \"step\":\"int\"}*"
-				],
-				"version": "1.1"
-			},
-			{
-				"methodName": "setAudioMute",
-				"parms": [
-					"{\"output\":\"string\", \"mute\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.1"
-			},
-			{
-				"methodName": "setAudioVolume",
-				"parms": [
-					"{\"output\":\"string\", \"volume\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.1"
-			},
-			{
-				"methodName": "setSoundSettings",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.1"
+				"retVals": []
 			}
 		],
-		"notifications": [
-			{
-				"methodName": "notifyWirelessSurroundInfo",
-				"parms": [],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "notifyVolumeInformation",
-				"parms": [],
-				"retVals": [],
-				"version": "1.0"
-			}
-		]
+		"serviceName": "system",
+		"version": "1.0",
+		"transport": "websocket:jsonizer"
 	},
 	{
-		"serviceName": "avContent",
-		"version": "1.0",
-		"transport": "websocket:jsonizer",
 		"methods": [
 			{
-				"methodName": "getAvailablePlaybackFunction",
-				"parms": [
-					"{\"output\":\"string\"}"
-				],
-				"retVals": [
-					"{\"functions\":\"FunctionInfo[]\", \"output\":\"string\", \"uri\":\"string\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getBluetoothSettings",
-				"parms": [
-					"{\"target\":\"string\"}"
-				],
-				"retVals": [
-					"{\"target\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"Boolean\", \"candidate\":\"GeneralSettingsCandidate[]\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getCurrentExternalTerminalsStatus",
+				"methodName": "getAudioSourceScreen",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [],
 				"retVals": [
-					"{\"uri\":\"string\", \"title\":\"string\", \"connection\":\"string\", \"active\":\"string\", \"label\":\"string\", \"outputs\":\"string*\", \"meta\":\"string\", \"iconUrl\":\"string\"}*"
-				],
-				"version": "1.0"
+					"{\"screen\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getBannerMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"currentValue\":\"string\",\"candidate\":\"BannerModeCandidate[]\"}"
+				]
 			},
 			{
 				"methodName": "getMethodTypes",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [
 					"string"
 				],
 				"retVals": [
 					"string",
+					"string",
 					"string*",
-					"string*",
-					"string"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getPlaybackModeSettings",
-				"parms": [
-					"{\"target\":\"string\", \"uri\":\"string\"}"
-				],
-				"retVals": [
-					"{\"target\":\"string\", \"uri\":\"string\", \"currentValue\":\"string\", \"deviceUIInfo\":\"string\", \"title\":\"string\", \"titleTextID\":\"string\", \"type\":\"string\", \"isAvailable\":\"bool\", \"candidate\":\"PlaybackModeSettingsCandidate[]\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getSchemeList",
-				"parms": [],
-				"retVals": [
-					"{\"scheme\":\"string\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getSupportedPlaybackFunction",
-				"parms": [
-					"{\"uri\":\"string\"}"
-				],
-				"retVals": [
-					"{\"functions\":\"SupportedFunctionInfo[]\", \"uri\":\"string\"}*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getVersions",
-				"parms": [],
-				"retVals": [
 					"string*"
-				],
-				"version": "1.0"
+				]
 			},
-			{
-				"methodName": "presetBroadcastStation",
-				"parms": [
-					"{\"uri\":\"string\", \"frequency\":\"int\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "scanPlayingContent",
-				"parms": [
-					"{\"output\":\"string\", \"direction\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "seekBroadcastStation",
-				"parms": [
-					"{\"direction\":\"string\", \"tuning\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setActiveTerminal",
-				"parms": [
-					"{\"uri\":\"string\", \"active\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setBluetoothSettings",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setPlayNextContent",
-				"parms": [
-					"{\"output\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setPlayPreviousContent",
-				"parms": [
-					"{\"output\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "setPlaybackModeSettings",
-				"parms": [
-					"{\"settings\":\"GeneralSettings[]\"}"
-				],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "startContentBrowsing",
-				"parms": [
-					"{\"uri\":\"string\"}"
-				],
-				"retVals": [
-					"{\"status\":\"string\", \"errorMessage\":\"string\"}"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "switchNotifications",
-				"parms": [
-					"{\"enabled\":\"ApiIdentity[]\", \"disabled\":\"ApiIdentity[]\"}"
-				],
-				"retVals": [
-					"{\"enabled\":\"ApiIdentity[]\", \"disabled\":\"ApiIdentity[]\", \"unsupported\":\"ApiIdentity[]\"}"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getSourceList",
-				"parms": [
-					"{\"scheme\":\"string\"}"
-				],
-				"retVals": [
-					"{\"source\":\"string\", \"title\":\"string\", \"isPlayable\":\"bool\", \"isBrowsable\":\"bool\", \"playAction\":\"string\", \"outputs\":\"string*\", \"meta\":\"string\", \"iconUrl\":\"string\"}*"
-				],
-				"version": "1.1"
-			},
-			{
-				"methodName": "pausePlayingContent",
-				"parms": [
-					"{\"output\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.1"
-			},
-			{
-				"methodName": "stopPlayingContent",
-				"parms": [
-					"{\"output\":\"string\", \"keepLastFrame\":\"bool\"}"
-				],
-				"retVals": [],
-				"version": "1.1"
-			},
-			{
-				"methodName": "getPlayingContentInfo",
-				"parms": [
-					"{\"output\":\"string\"}"
-				],
-				"retVals": [
-					"{\"uri\":\"string\", \"source\":\"string\", \"sourceLabel\":\"string\", \"title\":\"string\", \"output\":\"string\", \"stateInfo\":\"StateInfo\", \"positionSec\":\"double\", \"positionMsec\":\"int\", \"durationSec\":\"double\", \"durationMsec\":\"int\", \"playSpeedStep\":\"int\", \"repeatType\":\"string\", \"dispNum\":\"string\", \"originalDispNum\":\"string\", \"tripletStr\":\"string\", \"programNum\":\"int\", \"programTitle\":\"string\", \"startDateTime\":\"string\", \"mediaType\":\"string\", \"playSpeed\":\"string\", \"bivl_serviceId\":\"string\", \"bivl_assetId\":\"string\", \"bivl_provider\":\"string\", \"chapterIndex\":\"int\", \"chapterCount\":\"int\", \"subtitleIndex\":\"int\", \"artist\":\"string\", \"genre\":\"string*\", \"albumName\":\"string\", \"contentKind\":\"string\", \"fileNo\":\"string\", \"channelName\":\"string\", \"playlistName\":\"string\", \"podcastName\":\"string\", \"totalCount\":\"int\", \"broadcastFreq\":\"int\", \"broadcastFreqBand\":\"string\", \"dabInfo\":\"DabInfo\", \"audioInfo\":\"AudioInfo[]\", \"parentUri\":\"string\", \"service\":\"string\", \"index\":\"int\", \"videoInfo\":\"VideoInfo\", \"applicationName\":\"string\"}*"
-				],
-				"version": "1.2"
-			},
-			{
-				"methodName": "getSourceList",
-				"parms": [
-					"{\"scheme\":\"string\"}"
-				],
-				"retVals": [
-					"{\"source\":\"string\", \"title\":\"string\", \"isPlayable\":\"bool\", \"isBrowsable\":\"bool\", \"playAction\":\"string\", \"outputs\":\"string*\", \"meta\":\"string\", \"iconUrl\":\"string\", \"protocols\":\"string*\", \"upnpOperationInfo\":\"UpnpOperationInfo\"}*"
-				],
-				"version": "1.2"
-			},
-			{
-				"methodName": "setPlayContent",
-				"parms": [
-					"{\"uri\":\"string\", \"positionSec\":\"double\", \"positionMsec\":\"int\", \"resume\":\"bool\", \"requester\":\"string\", \"repeatType\":\"string\", \"keepLastFrame\":\"bool\", \"output\":\"string\"}"
-				],
-				"retVals": [],
-				"version": "1.2"
-			},
-			{
-				"methodName": "getContentCount",
-				"parms": [
-					"{\"uri\":\"string\", \"type\":\"string*\", \"target\":\"string\", \"view\":\"string\", \"path\":\"string\"}"
-				],
-				"retVals": [
-					"{\"count\":\"int\", \"capability\":\"int\"}"
-				],
-				"version": "1.3"
-			},
-			{
-				"methodName": "getContentList",
-				"parms": [
-					"{\"uri\":\"string\", \"stIdx\":\"int\", \"cnt\":\"int\", \"type\":\"string*\", \"target\":\"string\", \"view\":\"string\", \"sort\":\"string\", \"path\":\"string\"}"
-				],
-				"retVals": [
-					"{\"uri\":\"string\", \"title\":\"string\", \"index\":\"int\", \"dispNum\":\"string\", \"originalDispNum\":\"string\", \"tripletStr\":\"string\", \"programNum\":\"int\", \"programMediaType\":\"string\", \"directRemoteNum\":\"int\", \"epgVisibility\":\"string\", \"channelSurfingVisibility\":\"string\", \"visibility\":\"string\", \"startDateTime\":\"string\", \"channelName\":\"string\", \"fileSizeByte\":\"int\", \"isProtected\":\"string\", \"isAlreadyPlayed\":\"string\", \"productID\":\"string\", \"contentType\":\"string\", \"storageUri\":\"string\", \"chapterCount\":\"int\", \"durationMsec\":\"int\", \"audioInfo\":\"AudioInfo[]\", \"subtitleInfo\":\"SubtitleInfo[]\", \"parentalInfo\":\"ParentalInfo[]\", \"sizeMB\":\"int\", \"createdTime\":\"string\", \"userContentFlag\":\"bool\", \"content\":\"ContentInfo\", \"folderNo\":\"string\", \"fileNo\":\"string\", \"artist\":\"string\", \"genre\":\"string*\", \"albumName\":\"string\", \"contentKind\":\"string\", \"isPlayable\":\"string\", \"isBrowsable\":\"string\", \"remotePlayType\":\"string*\", \"playlistName\":\"string\", \"podcastName\":\"string\", \"broadcastFreq\":\"int\", \"broadcastFreqBand\":\"string\", \"parentUri\":\"string\", \"parentIndex\":\"int\", \"videoInfo\":\"VideoInfo\", \"is3D\":\"string\", \"path\":\"string\"}*"
-				],
-				"version": "1.4"
-			}
-		],
-		"notifications": [
-			{
-				"methodName": "notifyPlayingContentInfo",
-				"parms": [],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "notifyExternalTerminalStatus",
-				"parms": [],
-				"retVals": [],
-				"version": "1.0"
-			},
-			{
-				"methodName": "notifyAvailablePlaybackFunction",
-				"parms": [],
-				"retVals": [],
-				"version": "1.0"
-			}
-		]
-	},
-	{
-		"serviceName": "guide",
-		"version": "1.0",
-		"transport": "xhrpost:jsonizer",
-		"methods": [
 			{
 				"methodName": "getMethodTypes",
+				"version": "1.1",
+				"variation": 0,
 				"parms": [
 					"string"
 				],
@@ -652,37 +2203,167 @@
 					"string*",
 					"string*",
 					"string"
-				],
-				"version": "1.0"
+				]
+			},
+			{
+				"methodName": "getMultiScreenMode",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"mode\":\"string\",\"option\":\"MultiScreenModeOption\"}"
+				]
+			},
+			{
+				"methodName": "getMultiScreenMode",
+				"version": "1.1",
+				"variation": 1,
+				"parms": [],
+				"retVals": [
+					"{\"mode\":\"string\",\"option\":{\"internetTVMode\":\"bool\"}}"
+				]
+			},
+			{
+				"methodName": "getPipSubScreenPosition",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"position\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "getSceneSetting",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"{\"currentValue\":\"string\",\"candidate\":\"SceneSettingCandidate[]\"}"
+				]
+			},
+			{
+				"methodName": "getSceneSetting",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [],
+				"retVals": [
+					"{\"currentValue\":\"string\",\"candidate\":{\"value\":\"string\"}*}"
+				]
 			},
 			{
 				"methodName": "getServiceProtocols",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [],
-				"retVals": [
-					"string",
-					"string*"
-				],
-				"version": "1.0"
-			},
-			{
-				"methodName": "getSupportedApiInfo",
-				"parms": [
-					"{\"services\":\"string*\"}"
-				],
-				"retVals": [
-					"{\"service\":\"string\", \"protocols\":\"string*\", \"apis\":\"ApiInfo[]\"}*"
-				],
-				"version": "1.0"
+				"retVals": []
 			},
 			{
 				"methodName": "getVersions",
+				"version": "1.0",
+				"variation": 0,
 				"parms": [],
 				"retVals": [
 					"string*"
+				]
+			},
+			{
+				"methodName": "getVersions",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [],
+				"retVals": [
+					"string*"
+				]
+			},
+			{
+				"methodName": "requestToNotifyScreenState",
+				"version": "1.1",
+				"variation": 0,
+				"parms": [
+					"{\"multiScreenMode\":\"string\",\"pipSubScreenPosition\":\"string\",\"audioSourceScreen\":\"string\",\"option\":\"MultiScreenModeOption\"}"
 				],
-				"version": "1.0"
+				"retVals": [
+					"{\"multiScreenMode\":\"string\",\"pipSubScreenPosition\":\"string\",\"audioSourceScreen\":\"string\",\"option\":\"MultiScreenModeOption\"}"
+				]
+			},
+			{
+				"methodName": "requestToNotifyScreenState",
+				"version": "1.1",
+				"variation": 1,
+				"parms": [
+					"{\"multiScreenMode\":\"string\",\"option\":{\"internetTVMode\":\"bool\"},\"pipSubScreenPosition\":\"string\",\"audioSourceScreen\":\"string\"}"
+				],
+				"retVals": [
+					"{\"multiScreenMode\":\"string\",\"option\":{\"internetTVMode\":\"bool\"},\"pipSubScreenPosition\":\"string\",\"audioSourceScreen\":\"string\"}"
+				]
+			},
+			{
+				"methodName": "setAudioSourceScreen",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"screen\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setBannerMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"value\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setMultiScreenMode",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"mode\":\"string\",\"option\":\"MultiScreenModeOption\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setMultiScreenMode",
+				"version": "1.0",
+				"variation": 1,
+				"parms": [
+					"{\"mode\":\"string\",\"option\":{\"internetTVMode\":\"bool\"}}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPapScreenSize",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"screen\":\"string\",\"size\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setPipSubScreenPosition",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"position\":\"string\"}"
+				],
+				"retVals": []
+			},
+			{
+				"methodName": "setSceneSetting",
+				"version": "1.0",
+				"variation": 0,
+				"parms": [
+					"{\"value\":\"string\"}"
+				],
+				"retVals": []
 			}
 		],
-		"notifications": []
+		"notifications": [],
+		"serviceName": "videoScreen",
+		"version": "1.0",
+		"transport": "xhrpost:jsonizer"
 	}
 ]
