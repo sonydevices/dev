@@ -2,7 +2,7 @@
 	{
 		"methods": [
 			{
-				"methodName": "actRegister",
+				"methodName": "actRegister-change",
 				"version": "1.0",
 				"variation": 0,
 				"parms": [
@@ -43,7 +43,7 @@
 			}
 		],
 		"notifications": [],
-		"serviceName": "accessControl-change",
+		"serviceName": "accessControl",
 		"version": "1.0",
 		"transport": "xhrpost:jsonizer"
 	},
