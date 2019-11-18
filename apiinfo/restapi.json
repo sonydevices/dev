@@ -43,7 +43,7 @@
 			}
 		],
 		"notifications": [],
-		"serviceName": "accessControl",
+		"serviceName": "accessControl-change",
 		"version": "1.0",
 		"transport": "xhrpost:jsonizer"
 	},
